@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 12px 70px;
+}
+
+/* ================= LOGO ================= */
+
+.navbar .logo img {
+    height: 40px;
+}
+
+/* ================= NAV LINKS ================= */
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #5b5959;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.navbar .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #AB3500;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.navbar .nav-links a:hover {
+    color: #AB3500;
+}
+
+.navbar .nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* ================= ACTIVE LINK ================= */
+
+.navbar .nav-links a.active {
+    color: #AB3500;
+    font-weight: 600;
+}
+
+.navbar .nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+/* ================= REGISTER BUTTON ================= */
+
+#register-link {
+    background-color: #FF6B35;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 8px 24px !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+#register-link::after {
+    display: none;
+}
+
+#register-link:hover {
+    background-color: #B74100;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+    display: flex;
+    gap: 60px;
+    padding: 60px 70px 80px;
+    align-items: flex-start;
+}
+
+/* ================= LEFT SIDE (FORM) ================= */
+
+.contact-left {
+    flex: 1;
+    max-width: 520px;
+}
+
+.contact-left h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.contact-subtitle {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+/* ================= FORM ================= */
+
+.contact-form {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #D94F00;
+    box-shadow: 0 0 0 3px rgba(217, 79, 0, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ================= SEND BUTTON ================= */
+
+.btn-send {
+    width: 100%;
+    padding: 14px 28px;
+    background-color: #FF6B35;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-send:hover {
+    background-color: #D94F00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 79, 0, 0.25);
+}
+
+/* ================= RIGHT SIDE (CONTACT INFO) ================= */
+
+.contact-right {
+    flex: 1;
+    max-width: 440px;
+}
+
+/* ================= CONTACT INFO CARD ================= */
+
+.contact-info-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.contact-info-card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 28px;
+}
+
+/* ================= INFO ITEMS ================= */
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 50%;
+    background-color: #FFF0E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-text strong {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+}
+
+.info-text span {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.info-sub {
+    font-size: 13px !important;
+    color: #999 !important;
+}
+
+/* ================= MAP PLACEHOLDER ================= */
+
+.map-placeholder {
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    padding: 50px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.map-placeholder span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 70px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.footer-logo img {
+    height: 36px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 28px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #D94F00;
+    text-decoration: underline;
+}
+
+.footer-copyright p {
+    font-size: 13px;
+    color: #888;
+}

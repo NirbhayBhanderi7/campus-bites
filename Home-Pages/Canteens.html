@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteens - Campus Bites</title>
+    <link rel="stylesheet" href="Css/Canteens.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- ================= Navbar ================= -->
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Campus Bites Logo">
+        </div>
+
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="Canteens.html" class="active">Canteens</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Login.html">Login</a>
+            <a href="Register.html" id="register-link">Register</a>
+        </div>
+    </nav>
+    <hr>
+
+    <!-- ================= Canteens Section ================= -->
+
+    <section class="canteens-section">
+        <h1>Explore Campus Canteens</h1>
+        <p class="canteens-subtitle">Illustrative demo listings; names, locations, and availability are not verified campus information.</p>
+
+        <!-- Search & Filters -->
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search canteens...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="open">Available</button>
+            </div>
+        </div>
+
+        <!-- Canteen Cards Grid -->
+        <div class="canteens-grid"></div>
+    </section>
+
+    <!-- ================= Footer ================= -->
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="images/logo.png" alt="Campus Bites Logo">
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; Campus Bites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../shared/demo-data.js"></script>
+    <script src="../Student_Pages/js/app.js"></script>
+</body>
+
+</html>

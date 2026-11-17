@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#172820">
+    <title>Admin Sign In | CampusBites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin-login.css">
+</head>
+<body>
+    <main class="admin-login-page">
+        <header class="console-header">
+            <div class="console-brand" aria-label="CampusBites admin console">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 3v7M4 3v4a3 3 0 0 0 6 0V3M7 10v11M17 3v18M17 3c3 2 4 5 4 8h-4"></path>
+                    </svg>
+                </span>
+                <span class="brand-copy"><strong>CampusBites</strong><small>OPERATIONS CONSOLE</small></span>
+            </div>
+            <div class="system-status"><span></span> LOCAL SERVER</div>
+        </header>
+
+        <section class="login-stage" aria-labelledby="sign-in-title">
+            <div class="stage-label"><span>01</span> AUTHENTICATION</div>
+            <div class="login-card">
+                <div class="card-heading">
+                    <div class="lock-badge" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                            <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                        </svg>
+                    </div>
+                    <p class="eyebrow">ADMINISTRATOR SIGN IN</p>
+                    <h1 id="sign-in-title">Welcome back.</h1>
+                    <p class="card-description">Sign in with an administrator account created on this computer. Run npm start and open http://127.0.0.1:3000.</p>
+                </div>
+
+                <form class="login-form" method="post" action="#">
+                    <div class="field-group">
+                        <label for="admin-username">Admin email</label>
+                        <div class="input-wrap">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4"></circle>
+                                <path d="M5 21v-2a7 7 0 0 1 14 0v2"></path>
+                            </svg>
+                            <input type="email" id="admin-username" name="email" placeholder="admin@example.edu" autocomplete="username" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="admin-password">Password</label>
+                        <div class="input-wrap">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                            </svg>
+                            <input type="password" id="admin-password" placeholder="Enter your password" autocomplete="current-password" required>
+                            <button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false" title="Show password">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="submit-button" type="submit">
+                        Open admin dashboard
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </button>
+                    <p class="login-error" id="admin-login-error" role="alert" hidden></p>
+                </form>
+
+                <div class="demo-note"><span class="demo-dot"></span><p>Passwords are hashed on this computer. No default administrator password is provided.</p></div>
+            </div>
+            <p class="stage-footnote">CAMPUSBITES <span>/</span> INTERNAL ADMINISTRATION</p>
+        </section>
+
+        <footer class="console-footer"><span>ADMIN CONSOLE</span><span>LOCAL SQLITE AUTHENTICATION</span></footer>
+    </main>
+
+    <script>
+        const passwordInput = document.querySelector("#admin-password");
+        const passwordToggle = document.querySelector(".password-toggle");
+
+        passwordToggle.addEventListener("click", () => {
+            const isVisible = passwordInput.type === "text";
+            passwordInput.type = isVisible ? "password" : "text";
+            passwordToggle.setAttribute("aria-pressed", String(!isVisible));
+            passwordToggle.setAttribute("aria-label", isVisible ? "Show password" : "Hide password");
+            passwordToggle.title = isVisible ? "Show password" : "Hide password";
+        });
+    </script>
+    <script src="js/admin-login.js"></script>
+</body>
+</html>

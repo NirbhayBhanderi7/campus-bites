@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 12px 70px;
+}
+
+/* ================= LOGO ================= */
+
+.navbar .logo img {
+    height: 40px;
+}
+
+/* ================= NAV LINKS ================= */
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #5b5959;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.navbar .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #AB3500;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.navbar .nav-links a:hover {
+    color: #AB3500;
+}
+
+.navbar .nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* ================= ACTIVE LINK ================= */
+
+.navbar .nav-links a.active {
+    color: #AB3500;
+    font-weight: 600;
+}
+
+.navbar .nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+/* ================= REGISTER BUTTON ================= */
+
+#register-link {
+    background-color: #FF6B35;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 8px 24px !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+#register-link::after {
+    display: none;
+}
+
+#register-link:hover {
+    background-color: #B74100;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ================= ABOUT HERO SECTION ================= */
+
+.about-hero {
+    padding: 50px 70px 60px;
+}
+
+.about-hero-content {
+    display: flex;
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* ================= TEXT CARD ================= */
+
+.about-text-card {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 44px 40px;
+    background-color: #fff;
+}
+
+.about-text-card h1 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.about-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+/* ================= TAGS ================= */
+
+.about-tags {
+    display: flex;
+    gap: 12px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    background-color: #fff;
+}
+
+/* ================= IMAGE CARD ================= */
+
+.about-image-card {
+    flex: 1;
+    border-radius: 20px;
+    overflow:hidden;
+    border: 1px solid #e0e0e0;
+    min-height: 380px;
+}
+
+.about-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= HOW IT WORKS SECTION ================= */
+
+.how-it-works {
+    padding: 60px 70px 80px;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.how-subtitle {
+    font-size: 15px;
+    color: #888;
+    margin-bottom: 48px;
+}
+
+/* ================= STEPS GRID ================= */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* ================= STEP CARD ================= */
+
+.step-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 40px 28px 36px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= STEP ICONS ================= */
+
+.step-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.step-icon.icon-orange {
+    background-color: #FFE8DC;
+}
+
+.step-icon.icon-yellow {
+    background-color: #FEF3C7;
+}
+
+.step-icon.icon-green {
+    background-color: #DCFCE7;
+}
+
+.step-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.7;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 70px;
+    border-top: 1px solid #e8e8e8;
+    background-color: #fff;
+}
+
+.footer-logo img {
+    height: 36px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 28px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #D94F00;
+    text-decoration: underline;
+}
+
+.footer-copyright p {
+    font-size: 13px;
+    color: #888;
+}

@@ -1,0 +1,639 @@
+/* ====================================================
+   CampusBites — Profile Page Styles
+   ==================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ====================================================
+   SIDEBAR
+   ==================================================== */
+
+.sidebar {
+    width: 270px;
+    background-color: #fff;
+    border-right: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ---------- Sidebar Header ---------- */
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 16px;
+    min-height: 64px;
+}
+
+.sidebar-logo-img {
+    width: auto;
+    height: 40px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.sidebar-brand {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* ---------- Sidebar Navigation ---------- */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 16px 10px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #666;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-item svg {
+    flex-shrink: 0;
+}
+
+.nav-item:hover {
+    background-color: #f7f3f1;
+    color: #333;
+}
+
+.nav-item.active {
+    background-color: #2d2d2d;
+    color: #fff;
+}
+
+.nav-item.active svg {
+    stroke: #fff;
+}
+
+/* ---------- Order Now Button ---------- */
+
+.order-now-btn {
+    display: block;
+    margin: 12px 12px 16px;
+    padding: 13px 0;
+    text-align: center;
+    background-color: #D94F00;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.order-now-btn:hover {
+    background-color: #B74100;
+    transform: translateY(-2px);
+}
+
+/* ====================================================
+   MAIN CONTENT
+   ==================================================== */
+
+.main-content {
+    flex: 1;
+    margin-left: 270px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ====================================================
+   TOP BAR
+   ==================================================== */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 36px;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    min-height: 64px;
+}
+
+.topbar-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.3px;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ---------- Search Box ---------- */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f5f5f5;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 8px 16px;
+    min-width: 200px;
+    transition: border-color 0.2s ease;
+}
+
+.search-box:focus-within {
+    border-color: #D94F00;
+}
+
+.search-box svg {
+    flex-shrink: 0;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13.5px;
+    color: #333;
+    width: 100%;
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+}
+
+/* ---------- Icon Buttons ---------- */
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    position: relative;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.cart-btn::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    background-color: #D94F00;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* ---------- Topbar Avatar ---------- */
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #eee;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ====================================================
+   PROFILE CONTAINER & CARDS
+   ==================================================== */
+
+.profile-container {
+    padding: 32px 36px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-card {
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.card-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* ====================================================
+   PROFILE HEADER CARD
+   ==================================================== */
+
+.profile-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 20px;
+}
+
+.profile-user-info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #eee;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.profile-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 13.5px;
+    color: #666;
+}
+
+.meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.meta-label {
+    color: #888;
+    font-weight: 400;
+}
+
+.meta-value {
+    color: #444;
+    font-weight: 600;
+}
+
+.meta-divider {
+    color: #bbb;
+    font-size: 12px;
+}
+
+/* ---------- Edit Profile Button ---------- */
+
+.edit-profile-btn {
+    border: 2px solid #D94F00;
+    color: #D94F00;
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.edit-profile-btn svg {
+    flex-shrink: 0;
+}
+
+.edit-profile-btn:hover {
+    background-color: #D94F00;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(217, 79, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+/* ====================================================
+   TWO-COLUMN GRID
+   ==================================================== */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: minmax(320px, 380px) 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* ---------- Left Column: My Activity ---------- */
+
+.activity-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    flex: 1;
+}
+
+.stat-box {
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    min-height: 100px;
+    padding: 16px 12px;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-2px);
+    border-color: #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.stat-icon-wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    flex-shrink: 0;
+}
+
+.stat-icon-wrap svg {
+    display: block;
+}
+
+.icon-orange {
+    background-color: rgba(217, 79, 0, 0.1);
+}
+
+.icon-green {
+    background-color: rgba(76, 175, 80, 0.12);
+}
+
+.icon-pink {
+    background-color: rgba(233, 30, 99, 0.1);
+}
+
+.stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.stat-value-text {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #1a1a1a;
+    white-space: nowrap;
+}
+
+.stat-title {
+    font-size: 12px;
+    color: #777;
+    font-weight: 500;
+}
+
+/* ---------- Right Column: Personal Information ---------- */
+
+.personal-info-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 32px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    word-break: break-word;
+}
+
+/* ====================================================
+   LOGOUT SECTION (BELOW THE GRID, LEFT SIDE)
+   ==================================================== */
+
+.logout-section {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logout-card {
+    padding: 26px 24px;
+    width: 100%;
+    max-width: 380px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logout-card:hover {
+    border-color: #D94F00;
+    box-shadow: 0 4px 12px rgba(217, 79, 0, 0.08);
+}
+
+.logout-link {
+    
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #D94F00;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    width: 100%;
+}
+
+.logout-icon {
+    margin-left: 120px;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.logout-link:hover,
+.logout-card:hover .logout-link {
+    color: #B74100;
+}
+
+/* ====================================================
+   RESPONSIVE STYLES
+   ==================================================== */
+
+@media (max-width: 1024px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logout-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+
+    .topbar {
+        padding: 14px 20px;
+    }
+
+    .profile-container {
+        padding: 20px;
+    }
+
+    .profile-header-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .edit-profile-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-box {
+        min-width: 140px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-user-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .profile-meta {
+        justify-content: center;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+}
